@@ -3,7 +3,11 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract DynamicArrayContract {
     string public name = "DynamicArrayContract";
-    uint[] public dynamicArray; // 동적 배열 선언
+    bytes public dynamicArray; // 동적 배열 선언
+
+    constructor() {
+        dynamicArray.push(0x01);
+    }
 
     function createArray(uint size) public pure returns (uint[] memory) {
     uint[] memory newArray = new uint[](size);
@@ -11,7 +15,7 @@ contract DynamicArrayContract {
     return newArray;
     }
 
-    function addValue(uint value) public {
+    function addValue(bytes1 value) public {
         dynamicArray.push(value);
     }
 
@@ -19,7 +23,7 @@ contract DynamicArrayContract {
         return dynamicArray.length;
     }
 
-    function getValueAtIndex(uint index) public view  returns (uint) {
+    function getValueAtIndex(uint index) public view  returns (bytes1) {
         return dynamicArray[index];
     }
 
