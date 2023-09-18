@@ -7,11 +7,11 @@ import "./Onther.sol";
 contract Onther2 {
     Onther public onther = new Onther();
 
-    function mainpoint() view public returns (string memory) {
+    function mainPoint() view public returns (string memory) {
         return onther.name();
     }
 
-    function subpoint(uint x, uint y) pure public returns (uint) {
+    function subPoint(uint x, uint y) pure public returns (uint) {
         return add(x, y) + sub(x, y);
     }
 
