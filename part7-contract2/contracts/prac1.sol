@@ -22,4 +22,3 @@ contract Child is GrandParent, Parent {
         return grandParentMoney + parentMoney;
     }
 }
-
